@@ -1,0 +1,49 @@
+docker-compose down
+
+# List all containers
+docker ps -a
+
+# Remove specific container
+docker rm <container_id>
+
+docker rm $(docker ps -a)
+
+# Remove all stopped containers
+docker container prune
+
+# List all images
+docker images
+
+# Remove specific image
+docker rmi taxi_ingest:v001
+
+# Remove all unused images
+docker image prune -a
+
+# List volumes
+docker volume ls
+
+# Remove specific volumes
+docker volume rm ny_taxi_postgres_data
+docker volume rm pgadmin_data
+
+# Remove all unused volumes
+docker volume prune
+
+# List networks
+docker network ls
+
+# Remove specific network
+docker network rm pg-network
+
+# Remove all unused networks
+docker network prune
+
+# Remove parquet files
+rm *.parquet
+
+# Remove Python cache
+rm -rf __pycache__ .pytest_cache
+
+# Remove virtual environment (if using venv)
+rm -rf .venv
