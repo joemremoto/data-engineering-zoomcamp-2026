@@ -33,16 +33,17 @@ parse_dates = [
 @click.option('--pg-host', default='localhost', help='PostgreSQL host')
 @click.option('--pg-port', default=5432, type=int, help='PostgreSQL port')
 @click.option('--pg-db', default='ny_taxi', help='PostgreSQL database name')
+@click.option('--taxi-color', default='yellow', help='Taxi color')
 @click.option('--year', default=2021, type=int, help='Year of the data')
 @click.option('--month', default=1, type=int, help='Month of the data')
 @click.option('--target-table', default='yellow_taxi_data', help='Target table name')
 @click.option('--chunksize', default=100000, type=int, help='Chunk size for reading CSV')
 
 
-def run(pg_user, pg_pass, pg_host, pg_port, pg_db, year, month, target_table, chunksize):
-    
-    prefix = 'https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/'
-    url = f'{prefix}yellow_tripdata_{year}-{month:02d}.csv.gz'
+def run(pg_user, pg_pass, pg_host, pg_port, pg_db, taxi_color, year, month, target_table, chunksize):
+
+    prefix = f'https://github.com/DataTalksClub/nyc-tlc-data/releases/download/{taxi_color}/'
+    url = f'{prefix}{taxi_color}_tripdata_{year}-{month:02d}.csv.gz'
     engine = create_engine(f'postgresql://{pg_user}:{pg_pass}@{pg_host}:{pg_port}/{pg_db}')
 
     df_iter = pd.read_csv(
@@ -69,8 +70,17 @@ def run(pg_user, pg_pass, pg_host, pg_port, pg_db, year, month, target_table, ch
         )
         
     # For lookup
-    df_zones = pd.read_csv('https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/04-analytics-engineering/taxi_rides_ny/seeds/taxi_zone_lookup.csv')
+    df_zones = pd.read_csv('https://raw.githubusercontent.com/DataTalksClub/data-engineering-zoomcamp/main/04-analytics-engineering/taxi_rides_ny/seeds/taxi_zone_lookup.csv')
     df_zones.to_sql(name='zones', con=engine, if_exists='replace')
+    
+    df_homework = pd.read_parquet("green_tripdata_2025-11.parquet")
+
+    df_homework.to_sql(
+        name="green_taxi_trips_2025_11",
+        con=engine,
+        if_exists="replace"
+    )
+
 
 
 if __name__ == '__main__':
