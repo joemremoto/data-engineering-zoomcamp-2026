@@ -31,7 +31,8 @@ docker run -it --rm \
     --target-table=yellow_taxi_trips
 
 
-
+An image is a blueprint.
+A container is a running instance of that blueprint.
 
 docker network create pg-network
 
@@ -65,6 +66,9 @@ docker run -it \
   --network=pg-network \
   --name pgadmin \
   dpage/pgadmin4
+
+
+docker-compose up
 
 docker run -it --rm \
     --network=pipeline_default \

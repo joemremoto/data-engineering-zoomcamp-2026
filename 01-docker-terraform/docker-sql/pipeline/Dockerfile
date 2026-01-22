@@ -13,3 +13,4 @@ RUN uv sync --locked
 COPY ingest_data.py .
 
 ENTRYPOINT [ "python", "ingest_data.py" ]
+
