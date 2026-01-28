@@ -1,6 +1,7 @@
 *.parquet
 *.json
 *.csv
+*.env_encoded
 
 # terraform
 # Local .terraform directories
