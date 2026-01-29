@@ -2,7 +2,6 @@
 *.json
 *.csv
 *.env_encoded
-*.png
 
 # terraform
 # Local .terraform directories
