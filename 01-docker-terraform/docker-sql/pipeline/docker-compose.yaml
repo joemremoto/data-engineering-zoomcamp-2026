@@ -76,10 +76,10 @@ services:
               basePath: "/app/storage"
           queue:
             type: postgres
-          ai:
-            type: gemini
-            gemini:
-              model-name: gemini-2.5-flash
+          # ai:
+          #   type: gemini
+          #   gemini:
+          #     model-name: gemini-2.5-flash
               api-key: $GEMINI_APKI_KEY
           tasks:
             tmpDir:

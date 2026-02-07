@@ -53,3 +53,4 @@ tasks:
       GROUP BY brand
       ORDER BY avg_price DESC;
     fetchType: STORE
+
