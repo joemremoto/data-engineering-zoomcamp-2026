@@ -80,7 +80,7 @@ services:
           #   type: gemini
           #   gemini:
           #     model-name: gemini-2.5-flash
-              api-key: $GEMINI_APKI_KEY
+          #    api-key: $GEMINI_APKI_KEY
           tasks:
             tmpDir:
               path: /tmp/kestra-wd/tmp
