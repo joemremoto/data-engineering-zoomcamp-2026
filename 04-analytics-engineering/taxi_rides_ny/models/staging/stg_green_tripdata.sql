@@ -16,6 +16,7 @@ SELECT
     CAST(trip_type AS INT) AS trip_type, -- 1 for street-hail, 2 for dispatch/ehail
 
     -- payment details
+    
     CAST(fare_amount AS NUMERIC) AS fare_amount,
     CAST(extra AS NUMERIC) AS extra,
     CAST(mta_tax AS NUMERIC) AS mta_tax,
