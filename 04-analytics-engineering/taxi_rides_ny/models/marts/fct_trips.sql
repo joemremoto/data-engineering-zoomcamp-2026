@@ -91,7 +91,7 @@ SELECT
     ehail_fee,
     improvement_surcharge,
     total_amount,
-    payment_type,
-    payment_type_description
+    COALESCE(payment_type, 0) AS payment_type,
+    COALESCE(payment_type_description, 'Unknown') AS payment_type_description
 FROM create_id
 WHERE row_num = 1
