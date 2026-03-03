@@ -5,6 +5,7 @@
 # DuckDB files
 *.duckdb
 *.duckdb.wal
+*.db
 
 # terraform
 # Local .terraform directories
@@ -260,3 +261,9 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+.bruin.yml
+logs/runs
+logs/*.log
+*.py[cod]
+logs/queries
