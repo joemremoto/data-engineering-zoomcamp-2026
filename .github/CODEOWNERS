@@ -1,0 +1,8 @@
+# CODEOWNERS file for data-engineering-zoomcamp-2026
+
+# Default owners for everything in the repo
+* @joemremoto @JosephRemotoGit
+
+# You can also add specific patterns if needed:
+# /project/* @YOUR_PERSONAL_GITHUB_USERNAME @YOUR_WORK_GITHUB_USERNAME
+# /*.md @YOUR_PERSONAL_GITHUB_USERNAME @YOUR_WORK_GITHUB_USERNAME

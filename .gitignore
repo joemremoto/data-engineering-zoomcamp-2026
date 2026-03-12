@@ -6,6 +6,7 @@
 *.duckdb
 *.duckdb.wal
 *.db
+*.csv.gz
 
 # terraform
 # Local .terraform directories
