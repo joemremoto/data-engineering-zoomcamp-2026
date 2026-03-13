@@ -1,0 +1,20 @@
+# GCP SDK and libraries for Data Engineering Zoomcamp
+# Install with: pip install -r requirements.txt
+
+# Environment management
+python-dotenv>=1.0.0
+
+# Google Cloud Platform
+google-cloud-bigquery>=3.11.0
+google-cloud-storage>=2.10.0
+google-auth>=2.23.0
+
+# Common data engineering tools
+pandas>=2.0.0
+pyarrow>=14.0.0
+
+# Optional: For specific zoomcamp modules
+# dbt-core>=1.7.0
+# dbt-bigquery>=1.7.0
+# prefect>=2.14.0
+# apache-airflow>=2.7.0
