@@ -2,6 +2,8 @@
 This is my personal repo for anything related to the data engineering zoomcamp 2026 cohort.
 
 > **📚 Documentation:** [Quick Reference](./QUICK_REFERENCE.md) | [Virtual Env Setup](./SETUP_VIRTUAL_ENV.md) | [Credentials Setup](./CREDENTIALS_SETUP.md) | [Security Checklist](./SECURITY_CHECKLIST.md)
+> 
+> **🤖 Automation:** This repo uses GitHub Actions to auto-approve and auto-merge PRs from trusted authors (`joemremoto`, `JosephRemotoGit`). See [Workflows README](./.github/workflows/README.md).
 
 ## Quick Setup
 
